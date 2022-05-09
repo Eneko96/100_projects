@@ -1,0 +1,59 @@
+HTML CSSResult Skip Results Iframe EDIT ON html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: #34588e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border-radius: 50%;
+  background: #34588e;
+  height: 300px;
+  width: 300px;
+  border: 10px solid #fff;
+  overflow: hidden;
+  position: relative;
+  animation: shake 1s infinite alternate ease-in-out;
+}
+
+.container:after {
+  border-radius: 50%;
+  background: #da473c;
+  height: 500px;
+  width: 550px;
+  content: "";
+  position: absolute;
+  top: -275px;
+  left: -300px;
+  z-index: 2;
+}
+
+.container:before {
+  border-radius: 25%;
+  background: #fff;
+  height: 400px;
+  width: 500px;
+  content: "";
+  position: absolute;
+  top: -170px;
+  left: -240px;
+  transform: rotate(-15deg);
+  z-index: 1;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-5px)
+  }
+
+  100% {
+    transform: translateX(5px)
+  }
+}
+
+Run Pen Resources1× 0.5× 0.25×Rerun
