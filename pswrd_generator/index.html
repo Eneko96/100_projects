@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator</title>
+</head>
+
+<body>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #generator-container {
+      display: flex;
+      flex-direction: column;
+      background-color: #bcbcbc;
+      width: 30rem;
+      padding: 5rem;
+      height: 100%;
+      margin: auto;
+    }
+
+    form {
+      display: flex;
+      gap: .2rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #result {
+      margin: auto;
+      margin-top: 1rem;
+      overflow-wrap: anywhere;
+    }
+  </style>
+  <h1>Password Generator</h1>
+
+  <div id="generator-container">
+    <form id="generator">
+      <label for="length">Length:</label>
+      <input type="number" name="lengthPwd" id="length" min="1" max="100" value="10">
+      <br>
+      <label for="include-numbers">Include numbers:</label>
+      <input type="checkbox" name="include-numbers" id="include-numbers" checked>
+      <br>
+      <label for="include-symbols">Include symbols:</label>
+      <input type="checkbox" name="include-symbols" id="include-symbols" checked>
+      <br>
+      <input type="submit" value="Generate">
+    </form>
+    <div id="result">
+      <p></p>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
