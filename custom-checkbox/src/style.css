@@ -57,7 +57,7 @@ input[type="checkbox"]:checked+span {
   opacity: 1;
 }
 
-input[type="checkbox"]::before {
+label.checkbox::before {
   position: absolute;
   content: '';
   top: 3px;
