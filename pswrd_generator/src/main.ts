@@ -16,12 +16,12 @@ const charset = (inNum: boolean, inSym: boolean) => {
 }
 
 // copy password to clipboard
-function copyToClipboard(text) {
+function copyToClipboard(text: string) {
   const textArea = document.createElement('textarea');
   textArea.value = text;
   document.body.appendChild(textArea);
   textArea.select();
-  document.execCommand('copy');
+  navigator.clipboard.writeText(textArea.value)
   document.body.removeChild(textArea);
 }
 
