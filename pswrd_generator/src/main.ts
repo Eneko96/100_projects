@@ -1,5 +1,6 @@
 import './style.css'
-
+const $ = (selector: any) => document.querySelector(selector);
+const $copyButton = $('#copy-button') as HTMLButtonElement;
 const formNames = ({
   lengthName: 'lengthPwd',
   include_numbers: 'include-numbers',
@@ -14,6 +15,16 @@ const charset = (inNum: boolean, inSym: boolean) => {
   return res
 }
 
+// copy password to clipboard
+function copyToClipboard(text) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textArea);
+}
+
 // generate password
 function generatePassword(len = 5, inNum = false, inSym = false) {
   var length = len
@@ -26,7 +37,6 @@ function generatePassword(len = 5, inNum = false, inSym = false) {
 }
 
 
-const $ = (selector: any) => document.querySelector(selector);
 
 const $generate = $('#generator') as HTMLFormElement
 const $result = $('#result') as HTMLDivElement
@@ -40,5 +50,9 @@ $generate.addEventListener('submit', (event) => {
   console.log(length, includeNumbers, includeSymbols)
   const password = generatePassword(length, includeNumbers, includeSymbols)
   $result.firstChild.textContent = password
+})
+
+$copyButton.addEventListener('click', () => {
+  copyToClipboard($result.firstChild.textContent?.trim())
 })
 
